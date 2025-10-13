@@ -15,6 +15,10 @@ run/main_scene="uid://b2diw0v6dvlug"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Constants="*res://components/constants.gd"
+
 [input]
 
 move_right={

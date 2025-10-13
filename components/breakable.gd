@@ -9,7 +9,7 @@ func _check_death() -> void:
 		get_parent().queue_free()
 
 func _ready() -> void:
-	get_parent().set_meta("breakable_component", self)
+	get_parent().set_meta(Constants.BREAKABLE_COMPONENT, self)
 
 func hit(amount: int) -> void:
 	print("ow you hit me for %d" % amount)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfjh1derk52a0"]
+[gd_scene load_steps=5 format=3 uid="uid://dfjh1derk52a0"]
 
-[ext_resource type="Script" uid="uid://ctrkahwcpbf03" path="res://scene/brick/brick.gd" id="1_hiith"]
 [ext_resource type="Texture2D" uid="uid://d7clf8afngdc" path="res://assets/png/element_blue_rectangle_glossy.png" id="1_i8mrl"]
 [ext_resource type="Script" uid="uid://ohb4xm1bor6m" path="res://components/breakable.gd" id="2_q0h1t"]
 
@@ -19,7 +18,6 @@ animations = [{
 }]
 
 [node name="Brick" type="Area2D"]
-script = ExtResource("1_hiith")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
