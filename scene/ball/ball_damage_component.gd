@@ -7,8 +7,6 @@ func _ready() -> void:
 	area.area_entered.connect(self._deal_damage)
 
 func _deal_damage(body: Area2D) -> void:
-	print(body)
-	if body.is_in_group("breakable"):
-		var component: Breakable = body.get_meta("breakable_component")
-		if component:
-			component.hit(1)
+	var component: Breakable = body.get_meta("breakable_component")
+	if component:
+		component.hit(1)

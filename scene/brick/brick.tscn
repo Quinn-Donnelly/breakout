@@ -30,3 +30,4 @@ sprite_frames = SubResource("SpriteFrames_xwcet")
 
 [node name="Breakable" type="Node" parent="."]
 script = ExtResource("2_q0h1t")
+hits = 1

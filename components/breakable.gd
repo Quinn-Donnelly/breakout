@@ -9,7 +9,6 @@ func _check_death() -> void:
 		get_parent().queue_free()
 
 func _ready() -> void:
-	get_parent().add_to_group("breakable")
 	get_parent().set_meta("breakable_component", self)
 
 func hit(amount: int) -> void:
