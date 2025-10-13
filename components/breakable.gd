@@ -1,7 +1,7 @@
 class_name Breakable
 extends Node
 
-# How many hits to break
+## Time hit to cause deletion
 @export var hits: int
 
 func _check_death() -> void:
