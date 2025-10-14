@@ -13,6 +13,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	get_parent().position += velocity * delta
 
+	if get_parent().global_position.x < 0 or get_parent().global_position.x > get_viewport().get_visible_rect().size.x:
+		velocity.x = -velocity.x
+	if get_parent().global_position.y < 0:
+		velocity.y = -velocity.y
+
 func initial_hit() -> void:
 	velocity += Vector2(0, -1 * speed)
 
