@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr80flhqcln88"]
+[gd_scene load_steps=6 format=3 uid="uid://cr80flhqcln88"]
 
 [ext_resource type="Texture2D" uid="uid://0dhcjsav2s2v" path="res://assets/png/ballGrey.png" id="1_rrvam"]
-[ext_resource type="Script" uid="uid://k33ia13p2wan" path="res://components/forward_movement.gd" id="2_q3mu5"]
+[ext_resource type="Script" uid="uid://k33ia13p2wan" path="res://components/velocity.gd" id="2_q3mu5"]
 [ext_resource type="Script" uid="uid://7f0o34qxdq5m" path="res://scene/ball/ball_damage_component.gd" id="3_xuwn7"]
+[ext_resource type="Script" uid="uid://cs0wlu5gi847k" path="res://components/bounce.gd" id="4_mcgcx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3mu5"]
 radius = 11.0
@@ -15,10 +16,13 @@ texture = ExtResource("1_rrvam")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q3mu5")
 
-[node name="ForwardMovementComponent" type="Node" parent="."]
+[node name="VelocityComponent" type="Node" parent="."]
 script = ExtResource("2_q3mu5")
-speed = 300.0
+speed = 50.0
 
 [node name="BallDamageComponent" type="Node" parent="." node_paths=PackedStringArray("area")]
 script = ExtResource("3_xuwn7")
 area = NodePath("..")
+
+[node name="BounceComponent" type="Node" parent="."]
+script = ExtResource("4_mcgcx")

@@ -12,3 +12,7 @@ func _physics_process(delta: float) -> void:
 
 	position += vel * speed * delta
 	position.x = clampf(position.x, 0.0, 1152.0)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("init_hit"):
+		EventBus.initial_hit.emit()
