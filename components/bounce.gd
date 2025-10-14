@@ -10,5 +10,4 @@ func _ready() -> void:
 	movement = get_parent().get_meta(Constants.MOVEMENT_COMPONENT)
 
 func _bounce(body: Node2D) -> void:
-	var collision_normal: Vector2 = (area.global_position - body.global_position).normalized()
-	movement.bounceCollision(collision_normal)
+	movement.bounceCollision(area, body)
