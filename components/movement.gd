@@ -1,11 +1,11 @@
 class_name Movement
 extends Node
 
-## Speed at which ball will be launched
-@export var speed: float
-## Speed for paddle offset horiziontal mult
+## Vertical movement speed 
+@export var v_speed: float
+## Horiziontal movement speed
 @export var h_speed: float
-var velocity: Vector2 = Vector2(0,0)
+var _velocity: Vector2 = Vector2(0.0,0.0)
 var hasHit: bool = false
 
 func _ready() -> void:
@@ -13,22 +13,20 @@ func _ready() -> void:
 	EventBus.initial_hit.connect(self.initial_hit)
 
 func _physics_process(delta: float) -> void:
-	get_parent().global_position += velocity * delta
+	get_parent().global_position += _velocity * delta
 
 	if get_parent().global_position.x < 0 or get_parent().global_position.x > get_viewport().get_visible_rect().size.x:
-		velocity.x = -velocity.x
+		_velocity.x = -_velocity.x
 	if get_parent().global_position.y < 0:
-		velocity.y = -velocity.y
+		_velocity.y = -_velocity.y
 
 func initial_hit() -> void:
-	velocity += Vector2(0, -1 * speed)
+	_velocity = Vector2(0, -1 * v_speed)
 
-func bounceCollision(object: Node2D, collidedWith: Node2D) -> void:
-	var offset: float
-	if collidedWith.has_meta(Constants.COLLISION_SHAPE_COMPONENT):
-		var shapeComponent: CollisionShape = collidedWith.get_meta(Constants.COLLISION_SHAPE_COMPONENT)
-		var halfWidth: float  = shapeComponent.shape.extents.x
-		offset = clampf((object.global_position.x - collidedWith.global_position.x) / halfWidth, -1, 1)
+func getVelocity() -> Vector2:
+	return _velocity
 
-	velocity.x = offset * h_speed 
-	velocity = velocity.bounce(Vector2.UP)
+func setVelocity(vel: Vector2) -> void: 
+	var normVel = vel.normalized()
+	_velocity.y = normVel.y * v_speed
+	_velocity.x = normVel.x * h_speed

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr80flhqcln88"]
+[gd_scene load_steps=7 format=3 uid="uid://cr80flhqcln88"]
 
 [ext_resource type="Texture2D" uid="uid://0dhcjsav2s2v" path="res://assets/png/ballGrey.png" id="1_rrvam"]
 [ext_resource type="Script" uid="uid://k33ia13p2wan" path="res://components/movement.gd" id="2_q3mu5"]
@@ -7,6 +7,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3mu5"]
 radius = 11.0
+
+[sub_resource type="Curve" id="Curve_mcgcx"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.252137, -0.169666), 0.0, 0.0, 0, 0, Vector2(0.501424, 0), 0.0, 0.0, 0, 0, Vector2(0.750712, 0.19126), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [node name="Ball" type="Area2D"]
 
@@ -18,8 +23,8 @@ shape = SubResource("CircleShape2D_q3mu5")
 
 [node name="MovementComponent" type="Node" parent="."]
 script = ExtResource("2_q3mu5")
-speed = 50.0
-h_speed = 60.0
+v_speed = 500.0
+h_speed = 550.0
 
 [node name="BallDamageComponent" type="Node" parent="." node_paths=PackedStringArray("area")]
 script = ExtResource("3_xuwn7")
@@ -27,3 +32,4 @@ area = NodePath("..")
 
 [node name="BounceComponent" type="Node" parent="."]
 script = ExtResource("4_mcgcx")
+curve = SubResource("Curve_mcgcx")
