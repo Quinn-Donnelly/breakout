@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2diw0v6dvlug"]
+
+[ext_resource type="Script" uid="uid://tnbfgc06efgq" path="res://components/level.gd" id="1_j8xo1"]
+[ext_resource type="PackedScene" uid="uid://cayjtig5x4ctu" path="res://scene/player/player.tscn" id="1_x22wy"]
+[ext_resource type="PackedScene" uid="uid://cr80flhqcln88" path="res://scene/ball/ball.tscn" id="2_0x2tk"]
+[ext_resource type="PackedScene" uid="uid://dfjh1derk52a0" path="res://scene/brick/brick.tscn" id="3_41psm"]
+
+[node name="LevelOne" type="Node2D" node_paths=PackedStringArray("initialBall")]
+script = ExtResource("1_j8xo1")
+initialBall = NodePath("Ball")
+
+[node name="Player" parent="." instance=ExtResource("1_x22wy")]
+position = Vector2(0, 576)
+metadata/_edit_group_ = true
+
+[node name="Ball" parent="." instance=ExtResource("2_0x2tk")]
+position = Vector2(98, 411)
+metadata/_edit_group_ = true
+
+[node name="Bricks" type="Node" parent="."]
+
+[node name="Brick" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(160, 112)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(352, 112)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(288, 112)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(224, 112)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(160, 80)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(352, 80)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(288, 80)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(224, 80)
+
+[node name="Brick9" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(800, 112)
+
+[node name="Brick10" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(992, 112)
+
+[node name="Brick11" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(928, 112)
+
+[node name="Brick12" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(864, 112)
+
+[node name="Brick13" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(800, 80)
+
+[node name="Brick14" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(992, 80)
+
+[node name="Brick15" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(928, 80)
+
+[node name="Brick16" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(864, 80)

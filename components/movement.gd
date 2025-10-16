@@ -10,7 +10,6 @@ var hasHit: bool = false
 
 func _ready() -> void:
 	get_parent().set_meta(Constants.MOVEMENT_COMPONENT, self)
-	EventBus.initial_hit.connect(self.initial_hit)
 
 func _physics_process(delta: float) -> void:
 	get_parent().global_position += _velocity * delta

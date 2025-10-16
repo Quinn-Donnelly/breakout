@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ylwoyf65ix1"]
+
+[ext_resource type="Script" uid="uid://cvvyaeb14y2r5" path="res://scene/manager/game_manager.gd" id="1_bfrv2"]
+[ext_resource type="Script" uid="uid://ugf53sy0bbhd" path="res://scene/manager/scene_manager.gd" id="2_5fvq7"]
+[ext_resource type="PackedScene" uid="uid://b2diw0v6dvlug" path="res://scene/levels/LevelOne.tscn" id="3_7v4mr"]
+[ext_resource type="PackedScene" uid="uid://lhn0ocip42t2" path="res://scene/levels/LevelTwo.tscn" id="4_028nw"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_bfrv2")
+
+[node name="SceenManager" type="Node" parent="."]
+script = ExtResource("2_5fvq7")
+levels = Array[PackedScene]([ExtResource("3_7v4mr"), ExtResource("4_028nw")])
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"
