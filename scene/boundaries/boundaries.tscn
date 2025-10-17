@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2msrw1rur8pm"]
+
+[ext_resource type="Script" uid="uid://d0hsehnncfviw" path="res://components/killbox.gd" id="1_ylle4"]
+[ext_resource type="Script" uid="uid://ck8k0m1jv1g2v" path="res://components/collision_shape.gd" id="2_ambtn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs8qu"]
+size = Vector2(1152, 42)
+
+[node name="Boundaries" type="Node2D"]
+
+[node name="Killbox" type="Area2D" parent="."]
+position = Vector2(520, 688)
+script = ExtResource("1_ylle4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Killbox"]
+position = Vector2(56, 11)
+shape = SubResource("RectangleShape2D_cs8qu")
+script = ExtResource("2_ambtn")
+metadata/_custom_type_script = "uid://ck8k0m1jv1g2v"
