@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cr80flhqcln88" path="res://scene/ball/ball.tscn" id="2_davli"]
 [ext_resource type="PackedScene" uid="uid://dfjh1derk52a0" path="res://scene/brick/brick.tscn" id="3_fu7wl"]
 
-[node name="LevelTwo" type="Node2D" node_paths=PackedStringArray("initialBall")]
+[node name="LevelTwo" type="Node2D" node_paths=PackedStringArray("initialBall", "tiles")]
 script = ExtResource("1_davli")
 initialBall = NodePath("Ball")
+tiles = NodePath("Bricks")
 
 [node name="Player" parent="." instance=ExtResource("1_s1yu5")]
 position = Vector2(0, 576)

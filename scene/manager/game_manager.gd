@@ -2,7 +2,7 @@ extends Node
 
 var gameStart: bool = false
 @onready var button: Button = $Button
-@onready var sceneManager: SceneManager = $SceenManager
+@onready var sceneManager: SceneManager = $SceneManager
 
 
 func _ready() -> void:

@@ -8,9 +8,12 @@
 [node name="GameManager" type="Node"]
 script = ExtResource("1_bfrv2")
 
-[node name="SceenManager" type="Node" parent="."]
+[node name="SceneManager" type="Node" parent="."]
 script = ExtResource("2_5fvq7")
 levels = Array[PackedScene]([ExtResource("3_7v4mr"), ExtResource("4_028nw")])
+
+[node name="SceneTransitionTimer" type="Timer" parent="SceneManager"]
+one_shot = true
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 8
