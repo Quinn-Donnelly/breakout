@@ -9,6 +9,7 @@ var movement: Movement
 func _ready() -> void:
 	area = get_parent()
 	area.area_entered.connect(self._bounce)
+	area.body_entered.connect(self._bounce)
 	movement = get_parent().get_meta(Constants.MOVEMENT_COMPONENT)
 	if movement == null:
 		push_warning("movement component null on bounce parent")
@@ -31,4 +32,4 @@ func _bounceCollision(object: Node2D, collidedWith: Node2D) -> void:
 		velocity.x = offsetMult * movement.h_speed
 
 	velocity = velocity.bounce(Vector2.UP)
-	movement.setVelocity(velocity)
+	movement.call_deferred("setVelocity", velocity)

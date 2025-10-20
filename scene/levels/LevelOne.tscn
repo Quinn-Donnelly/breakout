@@ -22,3 +22,24 @@ metadata/_edit_group_ = true
 
 [node name="Brick" parent="Bricks" instance=ExtResource("3_41psm")]
 position = Vector2(160, 112)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(352, 112)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(288, 112)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(224, 112)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(800, 112)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(992, 112)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(928, 112)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("3_41psm")]
+position = Vector2(864, 112)
